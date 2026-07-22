@@ -44,6 +44,7 @@ socketHandler(io);
 
 app.use(cors({
     origin:"https://portfolio-frontend.vercel.app",
+    origin: "https://vermillion-crepe-425ad0.netlify.app/",
     credentials:true
 }));
 
