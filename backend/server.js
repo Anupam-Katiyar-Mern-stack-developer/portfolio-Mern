@@ -31,10 +31,13 @@ const app = express();
 
 const server = http.createServer(app);
 
-const io =new Server(server,{
-  cors:{
-    origin:"https://localhost:5173",
-    methods:["GET","POST"],
+const io = new Server(server, {
+  cors: {
+    origin: [
+      "https://vermillion-crepe-425ad0.netlify.app",
+      "https://portfolio-frontend.vercel.app"
+    ],
+    methods: ["GET", "POST"],
     credentials: true,
   },
 });
@@ -43,9 +46,11 @@ const io =new Server(server,{
 socketHandler(io);
 
 app.use(cors({
-    origin:"https://portfolio-frontend.vercel.app",
-    origin: "https://vermillion-crepe-425ad0.netlify.app/",
-    credentials:true
+  origin: [
+    "https://portfolio-frontend.vercel.app",
+    "https://vermillion-crepe-425ad0.netlify.app"
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
