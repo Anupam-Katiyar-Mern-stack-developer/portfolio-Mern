@@ -6,9 +6,9 @@ A modern and fully responsive **Portfolio Website** built using the **MERN Stack
 
 ## 🌐 Live Demo
 
-🔗 Frontend: https://your-frontend-url.vercel.app
+🔗 Frontend: https://vermillion-crepe-425ad0.netlify.app/
 
-🔗 Backend API: https://your-backend-url.onrender.com
+🔗 Backend API: https://portfolio-mern-c1y3.onrender.com/
 
 ---
 
