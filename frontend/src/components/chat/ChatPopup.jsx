@@ -48,7 +48,7 @@ const ChatPopup = ({ close }) => {
     const loadMessages = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:5000/api/chat/${roomId}`
+                `${import.meta.env.VITE_API_URL}/api/chat/${roomId}`
             );
 
             setMessages(res.data);
@@ -229,14 +229,14 @@ const ChatPopup = ({ close }) => {
                             <div
                                 key={item._id}
                                 className={`flex mb-3 ${item.sender === "visitor"
-                                        ? "justify-end"
-                                        : "justify-start"
+                                    ? "justify-end"
+                                    : "justify-start"
                                     }`}
                             >
                                 <div
                                     className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm ${item.sender === "visitor"
-                                            ? "bg-blue-600 text-white"
-                                            : "bg-white border"
+                                        ? "bg-blue-600 text-white"
+                                        : "bg-white border"
                                         }`}
                                 >
                                     <p>{item.message}</p>
