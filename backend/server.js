@@ -35,7 +35,8 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://vermillion-crepe-425ad0.netlify.app",
-      "https://portfolio-frontend.vercel.app"
+      "https://portfolio-frontend.vercel.app",
+     
     ],
     methods: ["GET", "POST"],
     credentials: true,
