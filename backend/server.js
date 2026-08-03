@@ -34,7 +34,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:5173",
+      
       "https://glittery-phoenix-14e9f9.netlify.app",
       "https://portfolio-frontend.vercel.app"
     ],
@@ -48,7 +48,7 @@ socketHandler(io);
 
 app.use(cors({
   origin: [
-    "http://localhost:5173",
+    
     "https://glittery-phoenix-14e9f9.netlify.app",
     "https://portfolio-frontend.vercel.app"
   ],
