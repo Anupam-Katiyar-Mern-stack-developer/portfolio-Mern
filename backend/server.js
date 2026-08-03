@@ -31,13 +31,14 @@ const app = express();
 
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  "https://anupamportfolio01.netlify.app",
+  "http://localhost:5173",
+];
+
 const io = new Server(server, {
   cors: {
-    origin: [
-      
-      "https://anupamportfolio01.netlify.app/",
-      "https://portfolio-frontend.vercel.app"
-    ],
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -47,13 +48,17 @@ const io = new Server(server, {
 socketHandler(io);
 
 app.use(cors({
-  origin: [
-    
-    "https://anupamportfolio01.netlify.app/",
-    "https://portfolio-frontend.vercel.app"
-  ],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use(cookieParser());
