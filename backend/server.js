@@ -38,7 +38,11 @@ const allowedOrigins = [
 
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: [
+      
+      "https://astounding-blini-0f7889.netlify.app//",
+      "https://portfolio-frontend.vercel.app"
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -48,17 +52,13 @@ const io = new Server(server, {
 socketHandler(io);
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: [
+    
+    "https://anupamportfolio01.netlify.app/",
+    "https://portfolio-frontend.vercel.app"
+  ],
   credentials: true,
 }));
-
-
 
 app.use(express.json());
 app.use(cookieParser());
