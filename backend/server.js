@@ -54,7 +54,7 @@ socketHandler(io);
 app.use(cors({
   origin: [
     
-    "https://anupamportfolio01.netlify.app/",
+    "https://anupamportfolio01.netlify.app",
     "https://portfolio-frontend.vercel.app"
   ],
   credentials: true,
