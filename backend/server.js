@@ -34,9 +34,9 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://vermillion-crepe-425ad0.netlify.app",
-      "https://portfolio-frontend.vercel.app",
-     
+      "http://localhost:5173",
+      "https://glittery-phoenix-14e9f9.netlify.app",
+      "https://portfolio-frontend.vercel.app"
     ],
     methods: ["GET", "POST"],
     credentials: true,
@@ -48,10 +48,11 @@ socketHandler(io);
 
 app.use(cors({
   origin: [
-    "https://portfolio-frontend.vercel.app",
-    "https://vermillion-crepe-425ad0.netlify.app"
+    "http://localhost:5173",
+    "https://glittery-phoenix-14e9f9.netlify.app",
+    "https://portfolio-frontend.vercel.app"
   ],
-  credentials: true
+  credentials: true,
 }));
 
 app.use(express.json());
