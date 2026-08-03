@@ -32,32 +32,24 @@ const app = express();
 const server = http.createServer(app);
 
 const allowedOrigins = [
-  "https://astounding-blini-0f7889.netlify.app/",
-  "http://localhost:5173",
+    "https://astounding-blini-0f7889.netlify.app",
+    "http://localhost:5173"
 ];
 
 const io = new Server(server, {
-  cors: {
-    origin: [
-      
-      "https://astounding-blini-0f7889.netlify.app//",
-      "https://portfolio-frontend.vercel.app"
-    ],
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
+    cors: {
+        origin: allowedOrigins,
+        methods: ["GET", "POST"],
+        credentials: true
+    }
 });
 
 
 socketHandler(io);
 
 app.use(cors({
-  origin: [
-    
-    "https://anupamportfolio01.netlify.app",
-    "https://portfolio-frontend.vercel.app"
-  ],
-  credentials: true,
+    origin: allowedOrigins,
+    credentials: true
 }));
 
 app.use(express.json());
