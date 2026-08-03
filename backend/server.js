@@ -32,7 +32,7 @@ const app = express();
 const server = http.createServer(app);
 
 const allowedOrigins = [
-  "https://anupamportfolio01.netlify.app",
+  "https://astounding-blini-0f7889.netlify.app/",
   "http://localhost:5173",
 ];
 
