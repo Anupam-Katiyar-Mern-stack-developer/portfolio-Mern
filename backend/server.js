@@ -35,7 +35,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       
-      "https://glittery-phoenix-14e9f9.netlify.app",
+      "https://anupamportfolio01.netlify.app/x-14e9f9.netlify.app",
       "https://portfolio-frontend.vercel.app"
     ],
     methods: ["GET", "POST"],
