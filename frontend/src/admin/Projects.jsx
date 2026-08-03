@@ -139,21 +139,18 @@ export default function AdminProjects() {
 
   // ================= DELETE =================
 
-  const deleteProject = async (id) => {
+ const deleteProject = async (id) => {
     try {
-      await API.delete(`/projects/${id}`);
-      for (let pair of data.entries()) {
-        console.log(pair[0], pair[1]);
-      }
+        await API.delete(`/projects/${id}`);
 
-      fetchProjects();
+        fetchProjects();
 
-      setDeleteId(null);
+        setDeleteId(null);
 
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
-  };
+};
 
   // ================= EDIT =================
 
