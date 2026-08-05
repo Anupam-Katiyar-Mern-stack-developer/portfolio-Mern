@@ -33,7 +33,8 @@ const server = http.createServer(app);
 
 const allowedOrigins = [
     "https://astounding-blini-0f7889.netlify.app",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://portfolio-mern-khaki.vercel.app"
 ];
 
 const io = new Server(server, {
